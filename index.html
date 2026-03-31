@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmiResumegen - Build Your Pro Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <h2 class="logo"><i class="fas fa-file-signature"></i> AmiResumegen</h2>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="templates.html">Templates</a>
+    <a href="about.html">About</a>
+    <button class="contact-btn" onclick="scrollToContact()">Contact</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Craft Your Perfect Resume in Minutes</h1>
+    <p>AmiResumegen helps you create, customize, and download professional resumes instantly. Stand out to recruiters with zero hassle.</p>
+    
+    <button class="build-btn" onclick="goToBuilder()">
+      <i class="fas fa-magic"></i> Start Building Now
+    </button>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Resume Illustration" class="hero-img">
+  </div>
+</section>
+
+<section class="features">
+  <h2 class="section-title" style="text-align: center;">Why Use AmiResumegen?</h2>
+  <div class="feature-grid" style="display: flex; justify-content: center; gap: 30px; padding: 20px 50px;">
+    
+    <div class="feature-card" style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 30%;">
+      <i class="fas fa-bolt" style="font-size: 30px; color: #7b5cff; margin-bottom: 10px;"></i>
+      <h3>Live Preview</h3>
+      <p>See your changes instantly as you type. No guessing how it will look.</p>
+    </div>
+
+    <div class="feature-card" style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 30%;">
+      <i class="fas fa-palette" style="font-size: 30px; color: #7b5cff; margin-bottom: 10px;"></i>
+      <h3>Custom Themes</h3>
+      <p>Choose your colors and templates to match your personal brand.</p>
+    </div>
+
+    <div class="feature-card" style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 30%;">
+      <i class="fas fa-file-pdf" style="font-size: 30px; color: #7b5cff; margin-bottom: 10px;"></i>
+      <h3>One-Click Export</h3>
+      <p>Download your finished resume as a high-quality PDF, ready to send.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact-section" class="contact">
+  <h2 class="section-title">Get in Touch</h2>
+  <p style="margin-bottom: 20px;">Have questions or suggestions? Let me know!</p>
+  
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks for reaching out! This form will be connected to a backend soon.');">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>© 2026 AmiResumegen | Built with ❤️ by Amit</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Quick smooth scroll function for the contact button
+  function scrollToContact() {
+    document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

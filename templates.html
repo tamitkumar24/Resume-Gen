@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmiResumegen - Choose Template</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Quick hover effect for the cards */
+    .template-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <h2 class="logo"><i class="fas fa-file-signature"></i> AmiResumegen</h2>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="templates.html" class="active">Templates</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="container" style="display: block; height: auto; padding: 50px 20px; text-align: center;">
+  
+  <h1 style="color: #2b2b2b; margin-bottom: 10px; font-size: 36px;">Select a Starting Theme</h1>
+  <p style="color: var(--text-light); margin-bottom: 50px; font-size: 16px;">
+    Choose a base design. You can always change the colors and fonts later in the builder!
+  </p>
+
+  <div class="template-container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+    <div class="template-card" onclick="selectTemplate('#7b5cff', '\'Segoe UI\', sans-serif')" style="background: white; padding: 25px; border-radius: 12px; width: 280px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; border-top: 6px solid #7b5cff;">
+      <div style="height: 160px; background: #f4f7f6; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-laptop-code fa-4x" style="color: #7b5cff;"></i>
+      </div>
+      <h3 style="margin: 0 0 10px 0; color: #2b2b2b;">Modern Tech</h3>
+      <p style="color: #666; font-size: 14px; margin: 0; line-height: 1.5;">Sleek, colorful, and perfect for software engineers. Uses a clean sans-serif font.</p>
+    </div>
+
+    <div class="template-card" onclick="selectTemplate('#2c3e50', '\'Georgia\', serif')" style="background: white; padding: 25px; border-radius: 12px; width: 280px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; border-top: 6px solid #2c3e50;">
+      <div style="height: 160px; background: #f4f7f6; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-user-tie fa-4x" style="color: #2c3e50;"></i>
+      </div>
+      <h3 style="margin: 0 0 10px 0; color: #2b2b2b;">Classic Executive</h3>
+      <p style="color: #666; font-size: 14px; margin: 0; line-height: 1.5;">Traditional serif font paired with an authoritative dark navy blue.</p>
+    </div>
+
+    <div class="template-card" onclick="selectTemplate('#17a2b8', '\'Courier New\', monospace')" style="background: white; padding: 25px; border-radius: 12px; width: 280px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; border-top: 6px solid #17a2b8;">
+      <div style="height: 160px; background: #f4f7f6; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-feather-alt fa-4x" style="color: #17a2b8;"></i>
+      </div>
+      <h3 style="margin: 0 0 10px 0; color: #2b2b2b;">Minimalist</h3>
+      <p style="color: #666; font-size: 14px; margin: 0; line-height: 1.5;">Clean, typewriter-style layout with a fresh teal accent color.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" style="margin-top: 50px;">
+  <p>© 2026 AmiResumegen | Built with ❤️ by Amit</p>
+</footer>
+
+<script>
+// Saves the chosen theme to local storage and redirects to the builder
+function selectTemplate(color, font) {
+  localStorage.setItem("presetColor", color);
+  localStorage.setItem("presetFont", font);
+  window.location.href = "builder.html";
+}
+</script>
+
+</body>
+</html>

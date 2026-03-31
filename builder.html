@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmiResumegen - Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <h2 class="logo"><i class="fas fa-file-signature"></i> AmiResumegen</h2>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="templates.html">Templates</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="left">
+    <h2><i class="fas fa-edit"></i> Enter Details</h2>
+
+    <div class="customization-bar" style="display: flex; gap: 15px; margin-bottom: 20px; align-items: center; background: #f8f9fa; padding: 10px; border-radius: 8px;">
+      <div>
+        <label for="themeColor" style="font-size: 14px; font-weight: bold;">Theme Color:</label>
+        <input type="color" id="themeColor" value="#7b5cff" oninput="changeColor(this.value)" style="padding: 0; width: 30px; height: 30px; border: none; cursor: pointer;">
+      </div>
+      <div>
+        <label for="fontSelector" style="font-size: 14px; font-weight: bold;">Font:</label>
+        <select id="fontSelector" onchange="changeFont(this.value)" style="margin-bottom: 0; padding: 5px;">
+          <option value="'Segoe UI', sans-serif">Segoe UI</option>
+          <option value="'Georgia', serif">Georgia</option>
+          <option value="'Courier New', monospace">Courier New</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button onclick="showTab('about')"><i class="fas fa-user"></i> About</button>
+      <button onclick="showTab('education')"><i class="fas fa-graduation-cap"></i> Education</button>
+      <button onclick="showTab('skills')"><i class="fas fa-laptop-code"></i> Skills</button>
+      <button onclick="showTab('projects')"><i class="fas fa-project-diagram"></i> Projects</button>
+      <button onclick="showTab('work')"><i class="fas fa-briefcase"></i> Work</button>
+    </div>
+
+    <div id="about" class="tab-content">
+      <label style="font-weight: bold; font-size: 14px; display: block; margin-bottom: 5px;">Profile Picture</label>
+      <input type="file" id="profileUpload" accept="image/*" onchange="loadImage(event)" style="border: 1px dashed #ccc; padding: 20px; text-align: center; cursor: pointer;">
+      
+      <input type="text" id="name" placeholder="Full Name (e.g., Amit Kumar)" oninput="generate()">
+      <input type="email" id="email" placeholder="Email Address" oninput="generate()">
+      <input type="tel" id="phone" placeholder="Phone Number" oninput="generate()">
+      <input type="text" id="linkedin" placeholder="LinkedIn or GitHub Profile (Optional)" oninput="generate()">
+    </div>
+
+    <div id="education" class="tab-content" style="display:none;">
+      <div id="education-container">
+        <div class="dynamic-item edu-item">
+          <input type="text" class="edu-school" placeholder="School/University Name" oninput="generate()">
+          <input type="text" class="edu-degree" placeholder="Degree (e.g., B.Tech in Computer Science)" oninput="generate()">
+          <input type="text" class="edu-year" placeholder="Year (e.g., 2022 - 2026)" oninput="generate()">
+        </div>
+      </div>
+      <button class="add-btn" onclick="addEducation()"><i class="fas fa-plus"></i> Add Another Degree</button>
+    </div>
+
+    <div id="skills" class="tab-content" style="display:none;">
+      <p style="font-size: 12px; color: #666; margin-top: 0;">Separate skills with commas (e.g., C++, Python, Data Structures)</p>
+      <textarea id="skillsText" placeholder="Your Skills..." rows="4" oninput="generate()"></textarea>
+    </div>
+
+    <div id="projects" class="tab-content" style="display:none;">
+      <div id="projects-container">
+        <div class="dynamic-item proj-item">
+          <input type="text" class="proj-name" placeholder="Project Name (e.g., The Debuggers Coding Club Website)" oninput="generate()">
+          <textarea class="proj-desc" placeholder="Briefly describe what you built and the tech stack used..." rows="3" oninput="generate()"></textarea>
+        </div>
+      </div>
+      <button class="add-btn" onclick="addProject()"><i class="fas fa-plus"></i> Add Another Project</button>
+    </div>
+
+    <div id="work" class="tab-content" style="display:none;">
+      <div id="work-container">
+        <div class="dynamic-item work-item">
+          <input type="text" class="work-title" placeholder="Job Title / Role" oninput="generate()">
+          <input type="text" class="work-company" placeholder="Company / Organization" oninput="generate()">
+          <textarea class="work-desc" placeholder="Describe your responsibilities and achievements..." rows="3" oninput="generate()"></textarea>
+        </div>
+      </div>
+      <button class="add-btn" onclick="addWork()"><i class="fas fa-plus"></i> Add Another Role</button>
+    </div>
+
+    <button class="download-btn" onclick="downloadPDF()" style="width: 100%; margin-top: 20px; font-size: 16px;">
+      <i class="fas fa-file-pdf"></i> Download Resume as PDF
+    </button>
+
+  </div>
+
+  <div class="right">
+    <div class="resume" id="preview">
+      <div style="text-align: center; color: #888; margin-top: 50px;">
+        <i class="fas fa-magic fa-3x" style="color: #ddd;"></i>
+        <h2>Your Preview Will Appear Here</h2>
+        <p>Start typing your details on the left to see the magic.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>

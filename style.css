@@ -1,0 +1,325 @@
+/* ===== CSS VARIABLES FOR EASY THEMING ===== */
+:root {
+  --primary: #7b5cff;
+  --primary-hover: #5a47d6;
+  --bg-color: #f4f7f6;
+  --text-main: #333;
+  --text-light: #666;
+  --card-bg: #ffffff;
+}
+
+/* ===== GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: var(--primary);
+  font-weight: 800;
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary);
+}
+
+.contact-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #ffffff 0%, #f0ebff 100%);
+}
+
+.hero-left {
+  max-width: 50%;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-left p {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.build-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(123, 92, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.build-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(123, 92, 255, 0.6);
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 450px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== FEATURES & CONTACT (INDEX.HTML) ===== */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #2b2b2b;
+}
+
+.feature-card {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.contact {
+  padding: 60px 20px;
+  background: var(--card-bg);
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--primary-hover);
+}
+
+/* ===== BUILDER LAYOUT ===== */
+.container {
+  display: flex;
+  height: calc(100vh - 70px); /* Fill screen minus navbar */
+}
+
+/* LEFT PANEL (FORM) */
+.left {
+  width: 45%;
+  background: var(--card-bg);
+  padding: 30px;
+  overflow-y: auto; /* Allow scrolling on the form side */
+  border-right: 1px solid #ddd;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.03);
+  z-index: 10;
+}
+
+/* RIGHT PANEL (PREVIEW) */
+.right {
+  width: 55%;
+  padding: 40px;
+  background: #6a737b; /* Darker background to make the white paper pop */
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ===== FORM ELEMENTS ===== */
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(123, 92, 255, 0.2);
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #f0f2f5;
+  color: var(--text-main);
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tabs button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== DYNAMIC ITEMS & ADD BUTTONS ===== */
+.dynamic-item {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 2px dashed var(--primary);
+  color: var(--primary);
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: rgba(123, 92, 255, 0.1);
+}
+
+/* ===== RESUME PREVIEW PAPER ===== */
+.resume {
+  background: white;
+  width: 100%;
+  max-width: 800px; /* Standard A4 width constraint */
+  min-height: 1050px; /* Standard A4 height constraint */
+  padding: 0; /* Padding is handled inside the generated HTML string */
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--card-bg);
+  border-top: 1px solid #ddd;
+  color: var(--text-light);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .hero-left {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    width: 100%;
+    overflow-y: visible;
+  }
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-card {
+    width: 90% !important;
+  }
+}
