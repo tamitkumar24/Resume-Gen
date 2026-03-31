@@ -28,7 +28,7 @@ Because this project is entirely client-side, you don't need Node.js or a backen
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/AmiResumegen.git](https://github.com/yourusername/AmiResumegen.git)
+    git clone [https://github.com/tamitkumar24/AmiResumegen.git](https://github.com/tamitkumar24/AmiResumegen.git)
     ```
 2.  **Open the project folder:**
     Navigate to the directory where you cloned the files.
