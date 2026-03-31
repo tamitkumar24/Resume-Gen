@@ -207,7 +207,10 @@ function downloadPDF() {
 
   html2pdf().set(opt).from(element).save();
 }
-
+// ===== NAVIGATION =====
+function goToBuilder() {
+  window.location.href = "builder.html";
+}
 // Run once on load to show initial layout
 // Run once on load to show initial layout
 window.onload = function() {
