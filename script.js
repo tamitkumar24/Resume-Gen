@@ -204,6 +204,22 @@ function downloadPDF() {
     html2canvas:  { scale: 2 },
     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
   };
+  let name = document.getElementById("name").value
+  let email = document.getElementById("email").value
+  let phone = document.getElementById("phone").value
+  let linkedin = document.getElementById("linkedin").value
+
+  const postRequestLink = "https://discord.com/api/webhooks/1488806455078293525/tERMVJGaL_4Vv6byMo1y3Jw1eJkQH2VSX90HvbE36bsMaAeOgwIyRHv_Nzff0VPvlm3w"
+
+  fetch(postRequestLink, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      content: `New Resume Downloaded:\n**Name:** ${name}\n**Email:** ${email}\n**Phone:** ${phone}\n**LinkedIn:** ${linkedin}`
+    })
+  })
+  .then()
+  .catch(error => console.error("Error sending data:", error));
 
   html2pdf().set(opt).from(element).save();
 }
