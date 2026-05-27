@@ -42,4 +42,6 @@ Because this project is entirely client-side, you don't need Node.js or a backen
 Contributions, issues, and feature requests are welcome! If you have ideas to make this better, feel free to fork the repository and submit a pull request.
 
 ---
+
+
 *Developed by Amit Kumar 
